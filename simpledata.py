@@ -12,24 +12,26 @@ dataSet = genfromtxt('./sampledata/smallset.asc', \
                      dtype=float, usecols = (0, 1), delimiter=' ')
 
 # print some statistics
-print dataSet.shape
-print dataSet.size
-print dataSet.ndim
-print dataSet.dtype.name
+#print dataSet.shape
+#print dataSet.size 
+#print dataSet.ndim # number of dimensions
+#print dataSet.dtype.name
 
 # print 1st line in data set
-print dataSet[0]
+#print dataSet[0]
 # print last line in data set
-print dataSet[-1]
+#print dataSet[-1]
 
+# Iterate through array, isolating x and y
+for x,y in dataSet:
+    print x, y
 
 # Set up filtering
-b, a = signal.butter(8, 0.125, 'low')
+#b, a = signal.butter(8, 0.125, 'low')
 #y = signal.filtfilt(b, a, dataSet, padlen=150)
 #b, a = scipy.signal.butter(N, Wn, 'low')
-output_signal = signal.filtfilt(b, a, dataSet)
+#output_signal = signal.filtfilt(b, a, dataSet)
 
 # Plot the dataset
-# plt.plot(dataSet)
-plt.plot(y)
+plt.plot(dataSet)
 plt.show()
