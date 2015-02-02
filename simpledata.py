@@ -22,12 +22,11 @@ print dataSet[0]
 # print last line in data set
 print dataSet[-1]
 
-
 # Set up filtering
 b, a = signal.butter(8, 0.125, 'low')
 #y = signal.filtfilt(b, a, dataSet, padlen=150)
 #b, a = scipy.signal.butter(N, Wn, 'low')
-output_signal = signal.filtfilt(b, a, dataSet)
+#output_signal = signal.filtfilt(b, a, dataSet)
 
 # Plot the dataset
 # plt.plot(dataSet)
